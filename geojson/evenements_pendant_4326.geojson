@@ -1,0 +1,26 @@
+{
+"type": "FeatureCollection",
+"name": "evenements_pendant_4326",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 0, "type": 1, "date": "1883-08-26", "heure": "13:00:00", "time": 46800, "desc": "Début de l'éruption paroxysmique" }, "geometry": { "type": "Point", "coordinates": [ 105.422248747405945, -6.103251908998711 ] } },
+{ "type": "Feature", "properties": { "id": 1, "type": 4, "date": "1883-08-26", "heure": "13:00:00", "time": 46800, "desc": "Chutes de cendres à Batavia (Jakarta) (~150km)" }, "geometry": { "type": "Point", "coordinates": [ 106.827165437772678, -6.175466995500359 ] } },
+{ "type": "Feature", "properties": { "id": 2, "type": 5, "date": "1883-08-26", "heure": "15:34:00", "time": 56040, "desc": "Première explosion entendue à Batavia" }, "geometry": { "type": "Point", "coordinates": [ 106.827172085920793, -6.175470293923274 ] } },
+{ "type": "Feature", "properties": { "id": 3, "type": 6, "date": "1883-08-26", "heure": "15:37:00", "time": 56220, "desc": "Premier tsunami" }, "geometry": { "type": "Point", "coordinates": [ 105.422249729050932, -6.103248457035085 ] } },
+{ "type": "Feature", "properties": { "id": 4, "type": 6, "date": "1883-08-26", "heure": "19:00:00", "time": 68400, "desc": "Tsunamis" }, "geometry": { "type": "Point", "coordinates": [ 105.42224978824386, -6.103324072581552 ] } },
+{ "type": "Feature", "properties": { "id": 5, "type": 6, "date": "1883-08-27", "heure": "01:00:00", "time": 90000, "desc": "Tsunamis" }, "geometry": { "type": "Point", "coordinates": [ 105.42224978824386, -6.103324072581552 ] } },
+{ "type": "Feature", "properties": { "id": 6, "type": 1, "date": "1883-08-27", "heure": "02:00:00", "time": 93600, "desc": "Plusieurs petites explosions à environ 10 minutes d'intervalle" }, "geometry": { "type": "Point", "coordinates": [ 105.42224978824386, -6.103324072581552 ] } },
+{ "type": "Feature", "properties": { "id": 7, "type": 1, "date": "1883-08-27", "heure": "04:30:00", "time": 102600, "desc": "Explosions" }, "geometry": { "type": "Point", "coordinates": [ 105.42224978824386, -6.103324072581552 ] } },
+{ "type": "Feature", "properties": { "id": 8, "type": 6, "date": "1883-08-27", "heure": "05:00:00", "time": 104400, "desc": "Tsunamis" }, "geometry": { "type": "Point", "coordinates": [ 105.42224978824386, -6.103324072581552 ] } },
+{ "type": "Feature", "properties": { "id": 9, "type": 6, "date": "1883-08-27", "heure": "09:06:00", "time": 119160, "desc": "Gros tsunami" }, "geometry": { "type": "Point", "coordinates": [ 105.422088629357177, -6.103324198957351 ] } },
+{ "type": "Feature", "properties": { "id": 10, "type": 1, "date": "1883-08-27", "heure": "09:58:00", "time": 122280, "desc": "Plus grosse explosion, plus gros tsunami, plus puissant son de l'Histoire émis, coulées pyroclastiques et explosions en continue" }, "geometry": { "type": "Point", "coordinates": [ 105.42224978824386, -6.103324072581552 ] } },
+{ "type": "Feature", "properties": { "id": 11, "type": 4, "date": "1883-08-27", "heure": "09:58:00", "time": 122280, "desc": "Coulées pyroclastiques atteignent peut-être la Baie de Lampung (~70km)" }, "geometry": { "type": "Point", "coordinates": [ 105.289625344371075, -5.491857834986391 ] } },
+{ "type": "Feature", "properties": { "id": 12, "type": 4, "date": "1883-08-27", "heure": "13:00:00", "time": 133200, "desc": "'Pluie de boue' due à des ignimbrites émises par des explosions sous-marines" }, "geometry": { "type": "Point", "coordinates": [ 105.42224978824386, -6.103324072581535 ] } },
+{ "type": "Feature", "properties": { "id": 13, "type": 4, "date": "1883-08-27", "heure": "14:00:00", "time": 136800, "desc": "Pluie de cendres dans la Baie de Lampung" }, "geometry": { "type": "Point", "coordinates": [ 105.289055288136865, -5.478145991140992 ] } },
+{ "type": "Feature", "properties": { "id": 14, "type": 1, "date": "1883-08-27", "heure": "14:30:00", "time": 138600, "desc": "Fin approximative des grosses détonations" }, "geometry": { "type": "Point", "coordinates": [ 105.422169208800938, -6.103324135775599 ] } },
+{ "type": "Feature", "properties": { "id": 15, "type": 4, "date": "1883-08-27", "heure": "16:00:00", "time": 144000, "desc": "Pluie de cendres dans les Îles Cocos (1155km OSO)" }, "geometry": { "type": "Point", "coordinates": [ 96.869013376463784, -12.146493548645479 ] } },
+{ "type": "Feature", "properties": { "id": 16, "type": 4, "date": "1883-08-28", "heure": "01:00:00", "time": 176400, "desc": "Fin des pluies de cendres" }, "geometry": { "type": "Point", "coordinates": [ 105.422356631951956, -6.103430269169827 ] } },
+{ "type": "Feature", "properties": { "id": 17, "type": 7, "date": "1883-08-28", "heure": "10:00:00", "time": 208800, "desc": "Le navire Gouverneur-General Loudon note la disparition de l'île de Krakatoa" }, "geometry": { "type": "Point", "coordinates": [ 105.371330032408338, -6.154869422982073 ] } },
+{ "type": "Feature", "properties": { "id": 18, "type": 7, "date": "1883-08-28", "heure": "11:00:00", "time": 212400, "desc": "Récif avec des cratères et des colonnes de fumée vues au nord du Krakatoa" }, "geometry": { "type": "Point", "coordinates": [ 105.422332363874958, -6.072357181974664 ] } }
+]
+}
