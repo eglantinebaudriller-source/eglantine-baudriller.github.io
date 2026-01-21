@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="L'éruption du Krakatoa de 1883">
+  <meta name="author" content="Fabian MATHIEU">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="max-age=31536000, must-revalidate">
+  <title>Krakatoa</title>
+  <link rel="icon" type="image/x-icon" href="img/icon.png">
+  <!-- Extension : Turf-->
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+  <script src='https://unpkg.com/@turf/turf@6.5.0/turf.min.js'></script>
+  <!-- CSS-->
+  <link rel="stylesheet" href="style.css">
+  <!-- Extension : MapLibre -->
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.13.0/dist/maplibre-gl.css">
+  <script src="https://unpkg.com/maplibre-gl@5.13.0/dist/maplibre-gl.js"></script>
+  <!-- MapLibre Compare -->
+  <script src="https://cdn.jsdelivr.net/npm/@maplibre/maplibre-gl-compare@0.5.0/dist/maplibre-gl-compare.js"></script>
+  <link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/@maplibre/maplibre-gl-compare@0.5.0/dist/maplibre-gl-compare.css>
+  <!-- Javascript-->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="pnr">
+      <a href="index.html"><img class="logo" src="img/logo.svg" width="64" height="105"></a>
+      <h1><a href="index.html">L'éruption du Krakatoa (1883)</a></h1>
+    </div>
+
+    <!-- Affichage des onglets -->
+    <nav class="nav">
+      <ul id="tabs">
+        <li data-tab="presentation" class="active">Présentation</li>
+        <li data-tab="historique">Historique</li>
+        <li data-tab="carte-son">Carte sons</li>
+        <li data-tab="carte-tsunami">Carte tsunami</li>
+        <li data-tab="carte-deces"> Carte décès</li>
+        <li data-tab="avant-apres"> Avant/Après</li>
+        <li data-tab="carte-evolution">Carte évolution</li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <!-- Contenus des onglets -->
+  <main>
+    <div id="tab-content">
+
+      <!-- Onglet par défaut - Présentation -->
+      <div id="presentation" class="tab active">
+        <h2>Localisation du volcan de Krakatoa</h2>
+          <p> 
+            Bienvenue sur cette exploration de l'éruption du volcan Krakatoa en 1883.
+          </p>
+        <div class="presentation-layout">
+          <!-- Carte globe -->
+          <div class="presentation-map">
+            <div id="presentation-map" class="map"></div>
+          </div>
+          <!-- Légende-->
+          <div class="map-legend top-right" id="presentation-legend">
+            <div class="map-legend-inner">
+              <div class="legend-title">Légende</div>
+
+              <div class="legend-item">
+                <span class="legend-icon legend-krakatoa"></span>
+                <span>Localisation du Krakatoa</span>
+              </div>
+            </div>
+          </div>
+          <!-- Diaporama -->
+          <div class="presentation-slideshow">
+            <div class="slideshow-container">
+              <div class="mySlide fade">
+                <img src="img/photo_1.jpg" alt="">
+                <div class="slide-caption">
+                  <strong>L'Anak Krakatau, le 20 octobre 2013</strong><br>
+                  Photographie - 2013<br>
+                  Source : Wikimedia - CC BY-SA 3.0
+                </div>
+              </div>
+
+              <div class="mySlide fade">
+                <img src="img/photo_2.jpg" alt="">
+                <div class="slide-caption">
+                  <strong>Éruption du Krakatoa (1883)</strong><br>
+                  Photographie - 1883<br>
+                  Source : Wikimedia - Domaine Public
+                </div>
+              </div>
+              <div class="mySlide fade">
+                <img src="img/photo_3.jpg" alt="">
+                <div class="slide-caption">
+                  <strong>Éruption du Krakatoa (1883)</strong><br>
+                  Lithographie par Parker & Coward - 1888<br>
+                  Source : Wikimedia - Domaine Public
+                </div>
+              </div>
+
+              <div class="mySlide fade">
+                <img src="img/photo_4.jpg" alt="">
+                <div class="slide-caption">
+                  <strong>Énorme bloc de corail à l'emplacement de l'ancienne poste d'Anyer (Indonésie) détruite après l'éruption du Krakatoa</strong><br>
+                  Photographie - 1885<br>
+                  Source : Wikimedia / Collectie Wereldmuseum - CC BY-SA 3.0
+                </div>
+              </div>
+
+              <div class="mySlide fade">
+                <img src="img/photo_5.jpg" alt="">
+                <div class="slide-caption">
+                  <strong>Éruption du Krakatoa (2008)</strong><br>
+                  Photographie - 2008<br>
+                  Source : Wikimedia - Domaine Public
+                </div>
+              </div>
+
+              <a class="prev">❮</a>
+              <a class="next">❯</a>
+            </div>
+
+            <div class="dots">
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+              <span class="dot" data-slide="3"></span>
+              <span class="dot" data-slide="4"></span>
+              <span class="dot" data-slide="5"></span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenu de l’onglet Historique -->
+      <div id="historique" class="tab">
+        <h2>Chronologie de l’éruption du Krakatoa (1883)</h2>
+
+        <!-- Carte -->
+        <div class="historique-map-container">
+          <div id="historique-map" class="map"></div>
+
+          <!-- Légende -->
+          <div class="map-legend historique-legend">
+            <div class="map-legend-inner">
+              <div class="legend-title">Types d’événements</div>
+
+              <div class="legend-item">
+                <span class="legend-color" style="background:#FF0000"></span>
+                <span>Éruption</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color" style="background:#FFC000"></span>
+                <span>Séismes</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color" style="background:#91E2FF"></span>
+                <span>Phénomène atmosphérique</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color" style="background:#262626"></span>
+                <span>Rejets volcaniques</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color" style="background:#FFFFFF; border:1px solid #000"></span>
+                <span>Témoignage sonore</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color" style="background:#0070C0"></span>
+                <span>Tsunami</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color" style="background:#92D050"></span>
+                <span>Autres</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contrôles -->
+          <div class="historique-controls">
+            <div class="row">
+              <button id="hist-play">▶</button>
+              <button id="hist-pause">⏸</button>
+              <button id="hist-reset">⟲ Reset</button>
+              <button id="hist-reset-zoom">🔍 Reset zoom</button>
+              <div id="hist-time-display">00:00</div>
+            </div>
+
+            <div id="hist-date-display">—</div>
+
+            <input id="hist-time-slider" type="range" min="0" max="220000" step="60" value="0" />
+
+            <div class="row">
+              <span>Vitesse</span>
+              <span class="speed-label" id="hist-speed-label">×1200</span>
+            </div>
+
+            <input id="hist-speed-slider" type="range" min="1" max="10800" step="1" value="1200" />
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Contenu de l'onglet Carte Son -->
+      <div id="carte-son" class="tab">
+        <h2>Propagation du son du Krakatoa (1883)</h2>
+
+        <div id="map" class="map"></div>
+
+        <div class="map-legend top-right" id="sound-legend">
+          <div class="map-legend-inner">
+            <div class="legend-title">Légende</div>
+            <div class="legend-item">
+              <span class="legend-icon legend-krakatoa"></span>
+              <span>Localisation du Krakatoa</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-icon legend-lieux"></span>
+              <span>Lieux où le son fut entendu (Royal Society, 1888)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-line legend-cercle"></span>
+              <span>Front de propagation du son</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-overlay top">
+          <div class="map-overlay-inner">
+            <h3>Propagation du son</h3>
+            <label id="time-label" for="time-slider">0 min (rayon: 0 km)</label>
+            <input id="time-slider" type="range">
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenu de l'onglet Carte Tsunami -->
+      <div id="carte-tsunami" class="tab">
+        <h2>Impact du tsunami provoqué par l'éruption</h2>
+        <div id="tsunami-map" class="map"></div>
+
+        <div class="map-legend" id="tsunami-legend">
+          <div class="map-legend-inner">
+            <div class="legend-title">Légende</div>
+
+            <div class="legend-item">
+              <span class="legend-icon legend-krakatoa"></span>
+              <span>Localisation du Krakatoa</span>
+            </div>
+
+            <div class="legend-item">
+              <span class="legend-icon legend-zone-verbeek"></span>
+              <span>Zones submergées (Verbeek, 1885)</span>
+            </div>
+
+            <div class="legend-item">
+              <span class="legend-icon legend-zone-principale"></span>
+              <span>Zones submergées (Clerc-Rampal, 1913)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenu de l'onglet Carte décès-->
+      <div id="carte-deces" class="tab">
+        <h2>Localisation des morts suite à l'éruption</h2>
+        <div id="map_deces" class="map"></div>
+
+        <div class="map-overlay top carte-deces-overlay">
+          <div class="map-overlay-inner">
+            <h3>Sélection du district</h3>
+            <select id="district-select">
+              <option value="ALL">Afficher tout</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="map-legend top-right carte-deces-legend">
+          <div class="map-legend-inner">            
+
+            <p style="font-weight: bold;">Nombre de décès (d'après Verbeek, 1885)</p>
+            <div class="legend-item">
+                <div class="legend-color legend-morts-1"></div>
+                <span>1 à 10</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-morts-2"></div>
+                <span>11 à 500</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-morts-3"></div>
+                <span>501 à 5 000</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-morts-4"></div>
+                <span>5 001 à 15 000</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color legend-morts-5"></div>
+                <span>20 000 et +</span>
+            </div>
+
+            <hr style="border-top: 1px solid rgba(255, 255, 255, 0.3); margin: 10px 0;">
+            
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #4bd1e6ff; border-radius: 10%; border: 1px solid #000000;"></div>
+                <span>Villages totalement ou partiellement détruits</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenu de l’onglet Avant/Après -->
+      <div id="avant-apres" class="tab">
+        <h2>Évolution de l’archipel du Krakatoa après l’éruption de 1883</h2>
+
+      <div id="wrapper">
+        <!-- Conteneur pour le plugin de comparaison -->
+        <div id="comparison-container">
+          <div id="before"></div>
+          <div id="after"></div>
+        </div>
+
+        <aside>
+          <h2>Lecture de la carte</h2>
+          <p>
+            La partie <strong>gauche</strong> montre l’archipel
+            <strong>avant 1883</strong>, la partie <strong>droite</strong> après
+            l’éruption. Tu peux zoomer, te déplacer et cliquer sur les polygones
+            pour obtenir quelques informations.
+          </p>
+
+          <h3>Légende</h3>
+          <div class="legend-item">
+            <span class="color-box pre"></span>
+            <span>Avant 1883</span>
+          </div>
+          <div class="legend-item">
+            <span class="color-box post"></span>
+            <span>Après 1883</span>
+          </div>
+          <div class="legend-item">
+            <span class="color-box diff"></span>
+            <span>Différence (zones modifiées)</span>
+          </div>
+
+          <div class="controls">
+            <h3>Options d’affichage</h3>
+            <label>
+              <input type="checkbox" id="toggle-diff">
+              Afficher la couche de différence
+            </label>
+
+            <p class="small-note">
+              La couche de différence met en évidence les zones gagnées ou perdues
+              après l’éruption.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+      <!-- Contenu de l'onglet Évolution-->  
+      <div id="carte-evolution" class="tab">
+        <h2>Évolution de l'île volcanique de Krakatoa (2017 → 2021)</h2>
+          <div id="evolution-map" class="map"></div>
+
+          <div class="map-legend top-right" id="evolution-legend">
+            <div class="map-legend-inner">
+              <div class="legend-title">Légende</div>
+
+              <div class="legend-item">
+                <span class="legend-color evolution-eau"></span>
+                <span>Eau</span>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-color evolution-debris"></span>
+                <span>Débris de l'île coulés par la lave</span>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-color evolution-fumee"></span>
+                <span>Fumée</span>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-color evolution-vegetation"></span>
+                <span>Végétation</span>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-color evolution-lave"></span>
+                <span>Lave</span>
+              </div>
+
+              <div class="legend-item">
+                <span class="legend-color evolution-sol"></span>
+                <span>Reste de l'île (sol nu)</span>
+              </div>
+
+            </div>
+          </div>
+
+      <div class="map-overlay top">
+        <div class="map-overlay-inner">
+          <h3>Année sélectionnée</h3>
+            <span id="anneeAffichee">2017</span>
+          <input id="timeline" type="range" min="1" max="5" value="1">
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+  
+</body>
+</html>
